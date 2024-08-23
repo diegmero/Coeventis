@@ -119,7 +119,7 @@ DESARROLLANDO
 DESCRIPCION DE LO QUE SE HA CUBIERTO EN LAS FASES
 
 
-Fase 1: Configuración y Base del Proyecto
+### Fase 1: Configuración y Base del Proyecto
 
 1. Configuración del Entorno:
 
@@ -141,7 +141,7 @@ Fase 1: Configuración y Base del Proyecto
     Migraciones iniciales creadas y aplicadas correctamente.
     Configuración de PostgreSQL como base de datos principal del proyecto.
 
-Fase 2: Autenticación y Perfiles de Usuario
+### Fase 2: Autenticación y Perfiles de Usuario
 
 1. Autenticación:
 
