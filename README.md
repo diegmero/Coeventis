@@ -111,3 +111,64 @@ Los organizadores podrán encontrar proveedores que se ajusten a sus necesidades
 * Mantenimiento:
     * Corrección de errores y actualizaciones de seguridad.
     * Desarrollo de nuevas funcionalidades y mejoras basadas en el feedback de los usuarios.
+ 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DESARROLLANDO
+DESCRIPCION DE LO QUE SE HA CUBIERTO EN LAS FASES
+
+
+Fase 1: Configuración y Base del Proyecto
+
+1. Configuración del Entorno:
+
+    Se ha instalado y configurado Python, Django, PostgreSQL, Node.js, y npm.
+    Se ha configurado un entorno virtual con venv para gestionar las dependencias de Python.
+    Instalación y configuración de Django Rest Framework (DRF) y SimpleJWT para la autenticación.
+    Se ha creado la estructura inicial del proyecto Django y la aplicación users.
+
+2. Configuración de Control de Versiones:
+
+    Se ha configurado Git y GitHub para el control de versiones.
+    Se ha creado un repositorio en GitHub para el proyecto.
+    Se han establecido ramas principales y flujos de trabajo.
+    Se realizaron commits de control y puntos de restauración utilizando Git.
+
+3. Diseño Inicial de la Base de Datos:
+
+    Se han creado los modelos principales para la autenticación de usuarios, incluyendo campos personalizados como role, company, nif, phone, y provider_type.
+    Migraciones iniciales creadas y aplicadas correctamente.
+    Configuración de PostgreSQL como base de datos principal del proyecto.
+
+Fase 2: Autenticación y Perfiles de Usuario
+
+1. Autenticación:
+
+    Implementación de JWT (JSON Web Tokens) para autenticación utilizando SimpleJWT.
+    Creación de rutas para registro, login, y refresco de tokens en la API:
+        POST /api/users/register/: Registro de organizadores y proveedores con validaciones específicas.
+        POST /api/users/login/: Autenticación de usuarios mediante JWT.
+        POST /api/users/token/refresh/: Refrescar tokens de acceso.
+
+2. Registro de Usuarios:
+
+    Validaciones específicas para dos roles: organizador y proveedor.
+    Los organizadores deben proporcionar company, nif y otros datos específicos.
+    Los proveedores deben seleccionar su tipo de proveedor y proporcionar datos específicos como company y nif.
+    Validaciones personalizadas que aseguran que los organizadores no seleccionen un tipo de proveedor y viceversa.
+
+3. Perfiles de Usuario:
+
+    Implementación de la ruta GET /api/users/profile/ para recuperar los datos del perfil del usuario autenticado.
+    Implementación de la ruta PATCH /api/users/profile/ para actualizar el perfil del usuario, con restricciones para impedir cambios en el rol una vez registrado.
+
+4. Sesiones y Seguridad:
+
+    Configuración para permitir solo una sesión activa por usuario utilizando el manejo de tokens JWT.
+    Los tokens antiguos se invalidan automáticamente cuando el usuario obtiene uno nuevo.
+
+5. Validaciones Adicionales:
+
+    Validación de formato de teléfono al registrarse.
+    Validaciones personalizadas para asegurar consistencia en los datos de organizadores y proveedores.
